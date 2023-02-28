@@ -3,7 +3,7 @@
 import http.client
 import urllib.parse
 
-url = "/integers/"
+subdir = "/integers/"
 params = {
     "num": 6,
     "min": 1,
@@ -16,7 +16,7 @@ params = {
 
 conn = http.client.HTTPSConnection("www.random.org")
 query_string = urllib.parse.urlencode(params)
-conn.request("GET", url + "?" + query_string)
+conn.request("GET", subdir + "?" + query_string)
 
 response = conn.getresponse()
 if response.status == 200:
